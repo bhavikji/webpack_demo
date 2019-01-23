@@ -2,6 +2,19 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
+    entry: [
+        "./src/index.js"
+    ],
+    output: {
+        filename: "bundle.js",
+        path: path.resolve(__dirname, "public"),
+        publicPath: "/"
+    },
+    devtool: "inline-source-map",
+    devServer: {
+        contentBase: [path.resolve(__dirname, "src")],
+        publicPath: "/"
+    },
     module: {
         rules: [
             {
@@ -35,5 +48,6 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         })
-    ]
+    ],
 };
+
