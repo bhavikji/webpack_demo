@@ -1,2 +1,2 @@
-import style from "index.css";
+import './index.css';
 console.log('hello webpack');
